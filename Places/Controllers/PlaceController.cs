@@ -4,9 +4,14 @@ using System.Collections.Generic;
 
 namespace Places.Controllers
 {
-    public class ItemsController : Controller
+    public class PlacesController : Controller
     {
-        
+        [HttpGet("/places")]
+        public ActionResult Index()
+        {
+            List<Place> allPlaces = Place.GetAll();
+            return View(allPlaces);
+        }
 
     }
 }
