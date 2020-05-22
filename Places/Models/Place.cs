@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Places.Models
 {
-    class Place
+    public class Place
     {
         public string CityName { get; set; }
         public int Id { get; }
