@@ -18,5 +18,11 @@ namespace PlacesTests
             Place newPlace = new Place("test");
             Assert.AreEqual(typeof(Place), newPlace.GetType());
         }
+        [TestMethod]
+        public void PlaceConstructor2_CreatesInstanceOfPlace_Place()
+        {
+            Place newPlace = new Place("test", "1 day", "Test test test");
+            Assert.AreEqual(typeof(Place), newPlace.GetType());
+        }
     }
 }
