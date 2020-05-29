@@ -16,8 +16,10 @@
             @foreach (Place place in Model)
             {
                 <li>@place.CityName</li>
+                <li><a href='/places/@place.Id'>@place.CityName</a></li>
             }
         </ul>
+        <a href='/places/new'>Add a new place.</a>
     </body>
 
 </html>
