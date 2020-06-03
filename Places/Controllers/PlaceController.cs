@@ -13,5 +13,32 @@ namespace Places.Controllers
             return View(allPlaces);
         }
 
+        [HttpGet("/places/new")]
+        public ActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost("/places")]
+        public ActionResult Create(string cityName, string stayLength, string journalEntry)
+        {
+            Place newPlace = new Place(cityName, stayLength, journalEntry);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("/places/delete")]
+        public ActionResult DeleteAll()
+        {
+            Place.ClearAll();
+            return View();
+        }
+
+        [HttpGet("/places/{id}")]
+        public ActionResult Show(int id)
+        {
+            Place foundPlace = Place.Find(id);
+            return View(foundPlace);
+        }
+
     }
 }
